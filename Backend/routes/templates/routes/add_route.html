@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Airport Route</title>
+</head>
+<body>
+
+<h2>Add Airport Route</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Route</button>
+</form>
+
+<hr>
+
+<a href="{% url 'search_route' %}">Search Nth Node</a><br>
+<a href="{% url 'longest_route' %}">Find Longest Node</a><br>
+<a href="{% url 'shortest_route' %}">Find Shortest Route</a>
+
+</body>
+</html>

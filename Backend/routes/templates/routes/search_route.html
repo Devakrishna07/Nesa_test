@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Airport Route</title>
+</head>
+<body>
+
+<h2>Find Nth Left / Right Node</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+</form>
+
+{% if result %}
+    <h3>Result</h3>
+
+    <p>Airport: {{ result.airport_code }}</p>
+    <p>Position: {{ result.position }}</p>
+    <p>Duration: {{ result.duration }} minutes</p>
+    <p>Next Airport: {{ result.next_airport }}</p>
+{% endif %}
+
+{% if error %}
+    <p style="color:red">{{ error }}</p>
+{% endif %}
+
+<a href="{% url 'add_route' %}">Back</a>
+
+</body>
+</html>

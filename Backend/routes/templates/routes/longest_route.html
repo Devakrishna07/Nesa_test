@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Longest Airport Route</title>
+</head>
+<body>
+
+<h2>Longest Route Node</h2>
+
+{% if longest %}
+
+    <p>Airport: {{ longest.airport_code }}</p>
+    <p>Position: {{ longest.position }}</p>
+    <p>Duration: {{ longest.duration }} minutes</p>
+    <p>Next Airport: {{ longest.next_airport }}</p>
+
+{% else %}
+
+    <p>No routes available.</p>
+
+{% endif %}
+
+<a href="{% url 'add_route' %}">Back</a>
+
+</body>
+</html>
