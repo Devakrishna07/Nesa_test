@@ -5,7 +5,13 @@ from .models import AirportRoute
 class AirportRouteForm(forms.ModelForm):
     class Meta:
         model = AirportRoute
-        fields = ['airport_code', 'position', 'duration', 'next_airport']
+        fields = [
+            'airport_code',
+            'position',
+            'duration',
+            'left_airport',
+            'right_airport'
+        ]
 
         widgets = {
             'airport_code': forms.TextInput(
@@ -17,8 +23,11 @@ class AirportRouteForm(forms.ModelForm):
             'duration': forms.NumberInput(
                 attrs={'placeholder': 'Duration in minutes'}
             ),
-            'next_airport': forms.TextInput(
-                attrs={'placeholder': 'Next airport code'}
+            'left_airport': forms.TextInput(
+                attrs={'placeholder': 'Left child airport code'}
+            ),
+            'right_airport': forms.TextInput(
+                attrs={'placeholder': 'Right child airport code'}
             ),
         }
 

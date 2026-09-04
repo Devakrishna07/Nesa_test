@@ -5,18 +5,16 @@
 </head>
 <body>
 
-<h2>Longest Route Node</h2>
+<h2>Longest Route</h2>
 
 {% if longest %}
 
-    <p>Airport: {{ longest.airport_code }}</p>
-    <p>Position: {{ longest.position }}</p>
-    <p>Duration: {{ longest.duration }} minutes</p>
-    <p>Next Airport: {{ longest.next_airport }}</p>
+    <p>Route: {{ longest.path|join:" → " }}</p>
+    <p>Total Duration: {{ longest.distance }} minutes</p>
 
 {% else %}
 
-    <p>No routes available.</p>
+    <p>{{ error }}</p>
 
 {% endif %}
 

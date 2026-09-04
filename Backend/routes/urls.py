@@ -1,9 +1,13 @@
 from django.urls import path
 from . import views
 
-urlpatterns = [
 
-    path('', views.add_route, name='add_route'),
+urlpatterns = [
+    path(
+        '',
+        views.add_route,
+        name='add_route'
+    ),
 
     path(
         'search/',
@@ -13,14 +17,13 @@ urlpatterns = [
 
     path(
         'longest/',
-        views.longest_route,
+        views.longest_route_view,
         name='longest_route'
     ),
 
     path(
         'shortest/',
-        views.shortest_route,
+        views.shortest_route_view,
         name='shortest_route'
     ),
-
 ]
